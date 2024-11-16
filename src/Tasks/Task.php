@@ -6,9 +6,9 @@ namespace App\Tasks;
 
 readonly class Task
 {
-    public readonly int $id;
-    public readonly string $name;
-    public readonly int $age;
+    public int $id;
+    public string $name;
+    public int $age;
 
     function __construct(int $id, string $name = '', int $age = 0)
     {
