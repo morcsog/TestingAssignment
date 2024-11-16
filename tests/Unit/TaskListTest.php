@@ -22,19 +22,19 @@ class TaskListTest extends TestCase
     public function testReturnsTheSame(): void
     {
         $taskList = new TaskList();
-        $task = new Task();
+        $task = new Task(1);
 
         $taskList->add($task);
 
         $this->assertSame($task, $taskList->get(0));
     }
 
-    public function testGivesInstancesBack()
+    public function testGivesInstancesBack(): void
     {
         $taskList = new TaskList();
-        $task1 = new Task();
-        $task2 = new Task();
-        $task3 = new Task();
+        $task1 = new Task(1);
+        $task2 = new Task(2);
+        $task3 = new Task(3);
 
         $taskList->add($task1);
         $taskList->add($task2);
@@ -43,5 +43,22 @@ class TaskListTest extends TestCase
         $this->assertSame($task1, $taskList->get(0));
         $this->assertSame($task2, $taskList->get(1));
         $this->assertSame($task3, $taskList->get(2));
+    }
+
+    public function testGivesNullBackById(): void
+    {
+        $taskList = new TaskList(1);
+
+        $this->assertNull($taskList->getById(123123));
+    }
+
+    public function testGivesTaskObjectBackById(): void
+    {
+        $taskList = new TaskList();
+        $task = new Task(1);
+
+        $taskList->add($task);
+
+        $this->assertSame($task, $taskList->getById(1));
     }
 }
