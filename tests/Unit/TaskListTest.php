@@ -47,7 +47,7 @@ class TaskListTest extends TestCase
 
     public function testGivesNullBackById(): void
     {
-        $taskList = new TaskList(1);
+        $taskList = new TaskList();
 
         $this->assertNull($taskList->getById(123123));
     }
