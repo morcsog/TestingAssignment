@@ -9,7 +9,6 @@ use App\Tasks\Task;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
-//require_once dirname(__DIR__) . '/vendor/autoload.php';
 
 class TaskListTest extends TestCase
 {
@@ -105,7 +104,6 @@ class TaskListTest extends TestCase
         $this->assertSame($task1, $taskList->get(0));
         $this->assertSame($task2, $taskList->get(1));
         $this->assertSame($task3, $taskList->get(2));
-
     }
 
     public function testSortByCustom()
@@ -124,6 +122,5 @@ class TaskListTest extends TestCase
         $this->assertSame($task1, $taskList->get(0));
         $this->assertSame($task2, $taskList->get(1));
         $this->assertSame($task3, $taskList->get(2));
-
     }
 }
