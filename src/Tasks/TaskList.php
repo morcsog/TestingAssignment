@@ -7,14 +7,14 @@ namespace App\Tasks;
 use App\Tasks\Task;
 class TaskList
 {
-    private Task $task;
+    private array $task;
     public function add(Task $task): void
     {
-        $this->task = $task;
+        $this->task[] = $task;
     }
 
-    public function get(int $intex): ?Task
+    public function get(int $index): ?Task
     {
-        return isset($this->task) ? $this->task : null;
+        return $this->task[$index] ?? null;
     }
 }
